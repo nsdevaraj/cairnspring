@@ -18,17 +18,17 @@ _Spring Security_ 2.0, using MySQL.
 
 2. Unzip both and import *CairnSpring*, to your Eclipse
 
-3. Paste the lib files to *CairnSpring\WebContent\WEB-INF\lib* folder
+3. Paste the lib files to *CairnSpring/WebContent/WEB-INF/lib* folder
 
-4. Import the *db.sql* into your MySQL Db, (change mysql port to 3036, else can be configured to default in *CairnSpring\WebContent\WEB-INF\config\jdbc.properties* file)
+4. Import the *db.sql* into your MySQL Db, (change mysql port to 3036, else can be configured to default in *CairnSpring/WebContent/WEB-INF/config/jdbc.properties* file)
 
 5. In Eclipse, Window -> Preferences -> Web and XML -> XML Catalog -> Add User Specified Entries with below values
 
 Location : CairnSpring/WebContent/WEB-INF/config/spring-flex-1.0.xsd
 
-KeyType : Namespace Name
+KeyType: Namespace Name
 
 Key : http://www.springframework.org/schema/flex/spring-flex-1.0.xsd
 
 
-6.Start the Tomcat Server with CairnSpring instance (the server host and port can be configured in file *CairnSpring\flex_src\Server.properties*)
+6.Start the Tomcat Server with CairnSpring instance (the server host and port can be configured in file *CairnSpring/flex_src/Server.properties* )
