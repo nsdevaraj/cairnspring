@@ -1,14 +1,19 @@
-#Steps to implement and test the source files
+*Steps to implement and test the source files*
 
 = Introduction =
 
 The Technologies used:
 
 _Cairngorm_ with UM Extensions , from Universal Mind
+
 _Spring BlazeDS Integration_ , from Spring Source
+
 _Spring_ , from Spring Source
+
 _Hibernate_
+
 _Generic DAO_ , from IBM.
+
 _Spring Security_ 2.0, using MySQL.
 
 = Details =
