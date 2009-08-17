@@ -37,4 +37,6 @@ KeyType: Namespace Name
 Key : http://www.springframework.org/schema/flex/spring-flex-1.0.xsd
 
 
-6.Start the Tomcat Server with CairnSpring instance (the server host and port can be configured in file *CairnSpring/flex_src/Server.properties* )
+6. Start the Tomcat Server with CairnSpring instance (the server host and port can be configured in file *CairnSpring/flex_src/Server.properties* )
+
+7. Place the fds_rb.swc in your locale folder D:\sdks\3.3.0\frameworks\locale\en_US
