@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Swiz:Swiz xmlns:fx="http://ns.adobe.com/mxml/2009" 
+		   xmlns:s="library://ns.adobe.com/flex/spark" 
+		   xmlns:mx="library://ns.adobe.com/flex/mx"
+		   xmlns:swiz="org.swizframework.core.*"
+		   xmlns:Swiz="org.swizframework.core.mxml.*"
+		   xmlns:dao="com.adams.scrum.dao.*"
+		   xmlns:collection="com.adams.scrum.models.collections.*"
+		   xmlns:service="com.adams.scrum.service.*"
+		   xmlns:vo="com.adams.scrum.models.vo.*"
+		   xmlns:response="com.adams.scrum.response.*"
+		   xmlns:signals="com.adams.scrum.signals.*" 
+		   xmlns:processors="com.foomonger.swizframework.processors.*"
+		   xmlns:controller="com.adams.scrum.controller.*"
+		   xmlns:storage="org.swizframework.storage.*" 
+		   xmlns:mediators="com.adams.scrum.views.mediators.*"
+		   xmlns:processor="com.adams.scrum.models.processor.*"  
+		   activate="initializeHandler(event)">
+	
+	<fx:Script>
+		<![CDATA[  
+			import com.adams.scrum.dao.AbstractDAO;
+			import com.adams.scrum.models.processor.ColumnProcessor;
+			import com.adams.scrum.models.vo.*;
+			
+			import mx.logging.LogEventLevel;
+			import mx.logging.targets.TraceTarget;
+			
+			import org.swizframework.utils.SwizLogger;
+			protected function initializeHandler(event:Event):void
+			{
+				/* var target:TraceTarget = new TraceTarget();
+				target.includeCategory = true;
+				target.includeDate = true;
+				target.includeLevel = true;
+				target.includeTime = true;
+				target.level = LogEventLevel.ALL;
+				
+				SwizLogger.addLoggingTarget(target);   */ 
+			}
+		]]> 
+	</fx:Script>
+	<fx:Declarations>
+		<storage:SharedObjectBean/>		
+	</fx:Declarations>
+	
+	<Swiz:config>
+		<swiz:SwizConfig viewPackages="{['com.adams.scrum.views.*']}" 
+						 tearDownEventType="{Event.REMOVED_FROM_STAGE}" 
+						 />
+	</Swiz:config>
+	
+	<Swiz:customProcessors>
+		<processors:MediateSignalProcessor id="signalProcessor" 
+										   signalPackages="com.adams.scrum.signals" 
+										   strictArgumentTypes="true"/>		
+	</Swiz:customProcessors>
+	
+	<Swiz:beanProviders> 
+		<swiz:BeanProvider>
+			
+			<!-- Service Begin-->
+			<service:NativeMessenger/> 
+			<!-- Service End -->
+			
+			<!-- Signals Begin -->
+			<signals:AbstractSignal/>
+			<signals:ResultSignal/>
+			<signals:ViewSignal/>
+			<!-- Signals End -->
+			
+			<!-- Response Begin -->
+			<response:AbstractResult/>
+			<response:SignalSequence/>
+			<!-- Response End -->
+			
+			<!-- Processors Begin-->
+			<processor:ColumnProcessor id="columnProcessor"/>
+			<processor:TaskProcessor id="taskProcessor"/>
+			<processor:PersonProcessor id="personProcessor"/>
+			<processor:EventProcessor id="eventProcessor"/>
+			<processor:DomainProcessor id="domainProcessor"/>
+			<processor:FileProcessor id="fileProcessor"/>
+			<processor:ProductProcessor id="productProcessor"/>
+			<processor:ProfileProcessor id="profileProcessor"/>
+			<processor:TeamProcessor id="teamProcessor"/>
+			<processor:ThemeProcessor id="themeProcesor"/>
+			<processor:ReportProcessor id="reportProcessor"/>
+			<processor:SprintProcessor id="sprintProcessor"/>
+			<processor:StatusProcessor id="statusProcessor"/>
+			<processor:StoryProcessor id="storyProcessor"/>
+			<processor:StoryThemeProcessor id="storyThemeProcessor"/>
+			<processor:TeamMemberProcessor id="teamMemberProcessor"/>
+			<processor:TicketProcessor id="ticketProcessor"/>
+			<processor:VersionProcessor id="versionProcessor"/>
+			<!-- Processors End -->  
+			
+			<!-- DAO Begin -->  
+			<swiz:Prototype name="taskDAO" constructorArguments="{['task',taskProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="personDAO" constructorArguments="{['person',personProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="eventDAO" constructorArguments="{['event',eventProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="columnDAO" constructorArguments="{['column',columnProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="domainDAO" constructorArguments="{['domain',domainProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="fileDAO" constructorArguments="{['file',fileProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="productDAO" constructorArguments="{['product',productProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="profileDAO" constructorArguments="{['profile',profileProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="reportDAO" constructorArguments="{['report',reportProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="sprintDAO" constructorArguments="{['sprint',sprintProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="statusDAO" constructorArguments="{['status',statusProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="storyDAO" constructorArguments="{['story',storyProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="teamDAO" constructorArguments="{['team',teamProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="teammemberDAO" constructorArguments="{['teammember',teamMemberProcessor]}" type="{AbstractDAO}" singleton="true"/> 
+			<swiz:Prototype name="themeDAO" constructorArguments="{['theme',themeProcesor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="ticketDAO" constructorArguments="{['ticket',ticketProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<swiz:Prototype name="versionDAO" constructorArguments="{['version',versionProcessor]}" type="{AbstractDAO}" singleton="true"/>
+			<!-- DAO End --> 
+			
+			<!-- Controller Begin -->
+			<vo:CurrentInstance/> 
+			<controller:ServiceController/>
+			<controller:LoadConfigCommand />
+			<!-- Controller End -->
+
+		</swiz:BeanProvider>
+	</Swiz:beanProviders>
+</Swiz:Swiz>

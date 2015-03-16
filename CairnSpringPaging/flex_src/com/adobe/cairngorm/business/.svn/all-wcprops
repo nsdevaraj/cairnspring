@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business
+END
+IServiceLocator.as
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/IServiceLocator.as
+END
+Responder.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/Responder.as
+END
+WebServices.as
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/WebServices.as
+END
+HTTPServices.as
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/HTTPServices.as
+END
+ServiceLocator.as
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/ServiceLocator.as
+END
+RemoteObjects.as
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/RemoteObjects.as
+END
+AbstractServices.as
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/AbstractServices.as
+END
+IServices.as
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/15/trunk/code/src/com/adobe/cairngorm/business/IServices.as
+END
